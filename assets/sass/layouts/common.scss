@@ -15,18 +15,21 @@ body {
   color: var(--fg);
 }
 
-a {
-  text-decoration: none;
 
+a {
   &:link {
-    color: var(--blue);
+    color: var(--orange);
   }
 
-  &:hover,
+  &:hover {
+    color: var(--orange-dim);
+  }
+
   &:visited {
-    color: var(--blue-dim);
+    color: var(--orange);
   }
 }
+
 
 ::selection {
   background-color: var(--blue);
@@ -86,12 +89,12 @@ hr {
 
 // header
 #header {
-  align-items: center;
+  align-items: stretch;
   display: flex;
   flex-direction: column;
 
   & > h1 {
-    text-align: center;
+    text-align: left;
 
     @media screen and (min-width: $mobile-breakpoint) {
       font-size: 2.8rem;
@@ -99,13 +102,13 @@ hr {
   }
 
   & > nav {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    max-width: $mobile-breakpoint;
-    margin-top: 10px;
-    width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start; /* left aligned */
+  gap: 2rem;                   /* Yue-style spacing */
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+  width: 100%;
 
     & > span > a {
       font-size: 1.2rem;
@@ -134,13 +137,24 @@ hr {
     }
   }
 
-  a,
-  a:hover,
+  a {
+    color: var(--orange);
+  }
+
+  a:hover {
+    color: var(--orange-dim);
+  }
+
   a:visited {
-    color: var(--fg1);
+    color: var(--orange);
   }
 }
-
+#header > h1 > a {
+  pointer-events: none;   /* disables clicking */
+  cursor: default;        /* normal text cursor */
+  text-decoration: none;  /* no underline */
+  color: var(--fg) !important;
+}
 // main
 main {
   margin: 0 $margin;
@@ -224,3 +238,4 @@ main {
 .row {
   margin-left: 2rem;
 }
+

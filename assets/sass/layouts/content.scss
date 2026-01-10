@@ -165,8 +165,7 @@ button.copy-button {
 .content h4,
 .content h5,
 .content h6 {
-  line-height: $f * $phi + 1;
-}
+  line-height: 1.35;}
 
 .content h1 {
   font-size: $f * math.pow($phi, 2);
@@ -197,7 +196,7 @@ button.copy-button {
 }
 
 .content p {
-  text-align: justify;
+  text-align: left;
 }
 
 // .content
